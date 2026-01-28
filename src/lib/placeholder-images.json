@@ -1,3 +1,70 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "A modern office setting with people collaborating.",
+      "imageUrl": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBvZmZpY2V8ZW58MHx8fHwxNzY5NTUxNDUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern office"
+    },
+    {
+      "id": "article-1",
+      "description": "A person writing at a desk.",
+      "imageUrl": "https://images.unsplash.com/photo-1500989145603-8e7ef71d639e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3cml0aW5nJTIwZGVza3xlbnwwfHx8fDE3Njk1ODk2ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "writing desk"
+    },
+    {
+      "id": "article-2",
+      "description": "A group of people in a meeting.",
+      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWFtJTIwbWVldGluZ3xlbnwwfHx8fDE3Njk1NDU1NTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team meeting"
+    },
+    {
+      "id": "article-3",
+      "description": "A close-up of a computer screen with code.",
+      "imageUrl": "https://images.unsplash.com/photo-1658274474930-bb27a64022c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb2RlJTIwc2NyZWVufGVufDB8fHx8MTc2OTYyNjY0NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "code screen"
+    },
+    {
+      "id": "article-4",
+      "description": "A library with many books.",
+      "imageUrl": "https://images.unsplash.com/photo-1532012197267-da84d127e765?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsaWJyYXJ5JTIwYm9va3N8ZW58MHx8fHwxNzY5NTYxODI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "library books"
+    },
+    {
+      "id": "article-5",
+      "description": "A person giving a presentation.",
+      "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcmVzZW50YXRpb258ZW58MHx8fHwxNzY5NjE2NjA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "presentation"
+    },
+    {
+      "id": "article-6",
+      "description": "Abstract network connections.",
+      "imageUrl": "https://images.unsplash.com/photo-1738082956242-d897b9177bba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxuZXR3b3JrJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzY5NjAwMDgxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "network abstract"
+    },
+    {
+      "id": "user-avatar-1",
+      "description": "Avatar for user 1",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3Njk1MTg4NDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "user-avatar-2",
+      "description": "Avatar for user 2",
+      "imageUrl": "https://images.unsplash.com/photo-1592621385612-4d7129426394?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2OTYzMjI1MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "user-avatar-3",
+      "description": "Avatar for user 3",
+      "imageUrl": "https://images.unsplash.com/photo-1636377985931-898218afd306?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3Njk2MjcxNjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "user-avatar-4",
+      "description": "Avatar for user 4",
+      "imageUrl": "https://images.unsplash.com/photo-1542596768-5d1d21f1cf98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc2OTYwMzc3NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    }
+  ]
 }
