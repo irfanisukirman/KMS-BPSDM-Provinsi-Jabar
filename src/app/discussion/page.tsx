@@ -25,7 +25,7 @@ export default function DiscussionPage() {
 
       <div className="space-y-6">
         {discussions.map((discussion) => (
-          <Card key={discussion.id} className="transition-shadow hover:shadow-md">
+          <Card key={discussion.id} className="shadow-lg transition-shadow hover:shadow-xl">
             <Link href={`/discussion/${discussion.id}`} className="block">
               <CardHeader className="flex flex-row items-start gap-4 space-y-0">
                   <Avatar className="h-10 w-10 border">

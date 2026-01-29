@@ -54,7 +54,7 @@ type CommentThreadProps = {
 export default function CommentThread({ comments }: CommentThreadProps) {
   return (
     <div className="space-y-8">
-        <Card>
+        <Card className="shadow-lg">
             <CardContent className="p-4 space-y-4">
                 <Textarea placeholder="Tulis komentar Anda..." />
                 <div className="flex justify-end">

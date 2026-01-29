@@ -15,7 +15,7 @@ type DiscussionThreadPageProps = {
 
 function PostItem({ post }: { post: NonNullable<ReturnType<typeof getDiscussionById>>['posts'][0] }) {
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden shadow-lg">
         <CardContent className="p-6 flex items-start space-x-4">
             <Avatar className="h-10 w-10 border">
               {post.author.avatarUrl && <AvatarImage src={post.author.avatarUrl} alt={post.author.name} data-ai-hint="person portrait"/>}
@@ -73,7 +73,7 @@ export default function DiscussionThreadPage({ params }: DiscussionThreadPagePro
 
         <div className="pt-8">
              <h2 className="font-headline text-2xl font-bold mb-4">Balas Topik</h2>
-             <Card>
+             <Card className="shadow-lg">
                 <CardContent className="p-4 space-y-4">
                     <Textarea placeholder="Tulis balasan Anda..." rows={5} />
                     <div className="flex justify-end">

@@ -11,27 +11,22 @@ import { getNewestArticles, getPopularArticles, getStats } from '@/lib/mock-data
 import { ArticleCard } from '@/components/ArticleCard';
 import Link from 'next/link';
 import Image from 'next/image';
-import { placeholderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const stats = getStats();
   const newestArticles = getNewestArticles();
   const popularArticles = getPopularArticles();
-  const heroImage = placeholderImages.find(p => p.id === 'hero-background');
 
   return (
     <div className="flex flex-col gap-8 md:gap-12">
       <section className="relative bg-primary w-full text-primary-foreground">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
+        <Image
+          src="/images/img_bpsdm.jpg"
+          alt="Gedung BPSDM Jawa Barat"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 pb-16 flex min-h-[calc(80vh-4rem)] flex-col items-center justify-center text-center p-4">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
@@ -54,9 +49,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-          <Card>
+          <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-3">
                 <Book className="h-8 w-8 text-info" />
@@ -67,7 +62,7 @@ export default function Home() {
               <p className="text-muted-foreground">Pengetahuan dan wawasan terbaru dari para ahli.</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-3">
                 <MessageSquare className="h-8 w-8 text-info" />
@@ -78,7 +73,7 @@ export default function Home() {
               <p className="text-muted-foreground">Ruang diskusi untuk bertukar pikiran dan ide.</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-3">
                 <BarChart className="h-8 w-8 text-info" />
@@ -89,7 +84,7 @@ export default function Home() {
               <p className="text-muted-foreground">Materi pembelajaran untuk pengembangan diri.</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-3">
                 <Users className="h-8 w-8 text-info" />
@@ -103,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-16">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline">Pengetahuan Terbaru</h2>
           <Button variant="outline" asChild>
@@ -117,7 +112,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 pb-12">
+      <section className="container mx-auto px-16 pb-12">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline">Paling Populer</h2>
           <Button variant="outline" asChild>

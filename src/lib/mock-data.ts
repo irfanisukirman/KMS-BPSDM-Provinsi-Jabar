@@ -2,10 +2,10 @@ import type { User, Article, Comment, Discussion, LearningResource, Stats } from
 import { placeholderImages } from './placeholder-images';
 
 const users: User[] = [
-  { id: 'user-1', name: 'Asep Sunandar', avatarId: 'user-avatar-1' },
-  { id: 'user-2', name: 'Siti Nurbaya', avatarId: 'user-avatar-2' },
-  { id: 'user-3', name: 'Budi Santoso', avatarId: 'user-avatar-3' },
-  { id: 'user-4', name: 'Dewi Lestari', avatarId: 'user-avatar-4' },
+  { id: 'user-1', name: 'Asep Sunandar', avatarId: 'user-avatar-1', jobTitle: 'Analis Kebijakan Ahli Madya' },
+  { id: 'user-2', name: 'Siti Nurbaya', avatarId: 'user-avatar-2', jobTitle: 'Widyaiswara Ahli Utama' },
+  { id: 'user-3', name: 'Budi Santoso', avatarId: 'user-avatar-3', jobTitle: 'Perencana Ahli Muda' },
+  { id: 'user-4', name: 'Dewi Lestari', avatarId: 'user-avatar-4', jobTitle: 'Auditor Ahli Pertama' },
 ];
 
 const comments: Comment[] = [
@@ -64,6 +64,8 @@ const articles: Article[] = [
     imageId: 'article-1',
     isPopular: true,
     comments: comments,
+    views: 2451,
+    likes: 312,
   },
   {
     id: 'article-2',
@@ -78,6 +80,8 @@ const articles: Article[] = [
     imageId: 'article-2',
     isPopular: true,
     comments: [],
+    views: 1876,
+    likes: 254,
   },
   {
     id: 'article-3',
@@ -92,6 +96,8 @@ const articles: Article[] = [
     imageId: 'article-3',
     isPopular: false,
     comments: [],
+    views: 980,
+    likes: 102,
   },
   {
     id: 'article-4',
@@ -106,6 +112,8 @@ const articles: Article[] = [
     imageId: 'article-4',
     isPopular: true,
     comments: [],
+    views: 3102,
+    likes: 489,
   },
   {
     id: 'article-5',
@@ -120,6 +128,8 @@ const articles: Article[] = [
     imageId: 'article-5',
     isPopular: false,
     comments: [],
+    views: 753,
+    likes: 98,
   },
 ];
 

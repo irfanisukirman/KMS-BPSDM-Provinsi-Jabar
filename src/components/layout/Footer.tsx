@@ -6,7 +6,7 @@ import { Logo } from '@/components/icons/Logo';
 export function Footer() {
   return (
     <footer className="bg-muted text-muted-foreground">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-16 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -21,9 +21,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm">
-              Badan Pengembangan Sumber Daya Manusia
-              <br />
-              Provinsi Jawa Barat
+              Platform berbagi pengetahuan dan pembelajaran untuk pengembangan kompetensi ASN di lingkungan Pemerintah Provinsi Jawa Barat.
             </p>
           </div>
           <div>
@@ -69,6 +67,7 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm">
           <p>&copy; {new Date().getFullYear()} BPSDM Provinsi Jawa Barat. Hak cipta dilindungi.</p>
+          <p className="mt-1">Developed by Irfan I. Sukirman, S.Kom.</p>
         </div>
       </div>
     </footer>
