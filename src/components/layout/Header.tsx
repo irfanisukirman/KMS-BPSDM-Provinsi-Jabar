@@ -27,18 +27,24 @@ export function Header() {
       <Link
         href={href}
         className={cn(
-          'text-sm font-medium transition-colors hover:text-white/80',
+          'relative group text-sm font-medium transition-colors hover:text-white py-2',
           isActive ? 'text-white font-bold' : 'text-primary-foreground/90'
         )}
         onClick={() => setIsMobileMenuOpen(false)}
       >
         {label}
+        <span
+          className={cn(
+            'absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-accent transition-all duration-300 ease-out',
+            isActive ? 'w-full' : 'w-0 group-hover:w-full'
+          )}
+        />
       </Link>
     );
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-primary text-primary-foreground shadow-md">
+    <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-primary text-primary-foreground shadow-lg">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <Logo className="h-8 w-8 text-white" />
@@ -74,7 +80,7 @@ export function Header() {
                   <span className="sr-only">Tutup menu</span>
                 </Button>
               </div>
-              <nav className="flex flex-col gap-6 p-6">
+              <nav className="flex flex-col gap-4 p-6">
                 {navLinks.map((link) => (
                   <NavLink key={link.href} {...link} />
                 ))}
