@@ -106,7 +106,7 @@ export default function Home() {
       <section className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline">Pengetahuan Terbaru</h2>
-          <Button variant="link" asChild className="text-info hover:text-info/80">
+          <Button variant="outline" asChild>
             <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
         </div>
@@ -120,7 +120,7 @@ export default function Home() {
       <section className="container mx-auto px-4 pb-12">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline">Paling Populer</h2>
-          <Button variant="link" asChild className="text-info hover:text-info/80">
+          <Button variant="outline" asChild>
             <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
         </div>
