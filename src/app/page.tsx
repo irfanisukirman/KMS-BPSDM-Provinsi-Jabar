@@ -112,7 +112,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-16 pb-12">
+      <section className="container mx-auto px-16">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline">Paling Populer</h2>
           <Button variant="outline" asChild>
@@ -126,7 +126,7 @@ export default function Home() {
         </div>
       </section>
 
-       <section className="bg-primary text-primary-foreground -mb-12">
+       <section className="bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 py-16 md:py-20 text-center">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
             Siap Berbagi Pengetahuan?
