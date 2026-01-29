@@ -21,9 +21,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm">
-              Badan Pengembangan Sumber Daya Manusia
-              <br />
-              Provinsi Jawa Barat
+              Platform berbagi pengetahuan dan pembelajaran untuk pengembangan kompetensi ASN di lingkungan Pemerintah Provinsi Jawa Barat.
             </p>
           </div>
           <div>
