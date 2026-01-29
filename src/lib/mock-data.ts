@@ -245,6 +245,7 @@ export function getStats(): Stats {
     return {
         articles: articles.length,
         discussions: discussions.length,
-        resources: learningResources.length
+        resources: learningResources.length,
+        users: users.length,
     }
 }

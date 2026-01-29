@@ -57,4 +57,5 @@ export type Stats = {
   articles: number;
   discussions: number;
   resources: number;
+  users: number;
 };
