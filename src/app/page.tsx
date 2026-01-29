@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-8 md:gap-12">
       <section className="relative bg-primary w-full text-primary-foreground">
-        <div className="relative z-10 flex h-[80vh] min-h-[480px] flex-col items-center justify-center text-center p-4">
+        <div className="relative z-10 flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center text-center p-4">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
             <span className="block">Berbagi Pengetahuan dan</span>
             <span className="block text-accent">Membangun Kompetensi</span>
