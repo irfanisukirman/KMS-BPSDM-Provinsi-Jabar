@@ -34,10 +34,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-            BPSDM Knowledge Hub
+            <span className="block">Berbagi Pengetahuan dan</span>
+            <span className="block text-accent">Membangun Kompetensi</span>
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl text-primary-foreground/90">
-            Media berbagi pengetahuan dan pembelajaran untuk meningkatkan kompetensi pegawai BPSDM Provinsi Jawa Barat.
+            Platform berbagi pengetahuan dan pembelajaran untuk pengembangan kompetensi ASN di lingkungan Pemerintah Provinsi Jawa Barat.
           </p>
           <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90">
             <Link href="/knowledge">
