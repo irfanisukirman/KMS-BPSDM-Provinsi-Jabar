@@ -51,15 +51,18 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-headline font-semibold text-foreground mb-4">Media Sosial</h3>
-            <div className="flex space-x-4">
-              <Link href="https://www.instagram.com/bpsdmjabar">
+            <h3 className="font-headline font-semibold text-foreground mb-4">Kanal Resmi</h3>
+            <div className="flex space-x-4 items-center">
+              <Link href="https://bpsdm.jabarprov.go.id" target="_blank">
+                <Image src="/icons/ic_bpsdm.png" alt="Website Resmi" height={24} width={49} />
+              </Link>
+              <Link href="https://www.instagram.com/bpsdmjabar" target="_blank">
                 <Image src="/icons/ic_instagram.png" alt="Instagram" width={24} height={24} />
               </Link>
-              <Link href="https://www.tiktok.com/@bpsdm_jabar">
+              <Link href="https://www.tiktok.com/@bpsdm_jabar" target="_blank">
                 <Image src="/icons/ic_tiktok.png" alt="TikTok" width={24} height={24} />
               </Link>
-              <Link href="https://www.youtube.com/@BpsdmJabarOfficial">
+              <Link href="https://www.youtube.com/@BpsdmJabarOfficial" target="_blank">
                 <Image src="/icons/ic_youtube.png" alt="YouTube" width={24} height={24} />
               </Link>
             </div>
