@@ -42,24 +42,24 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary" />
-                <a href="tel:+62226652451" className="hover:text-primary">(022) 6652451</a>
+                <a href="tel:+62226649471" className="hover:text-primary">(022) 6649471</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:info@bpsdm.jabarprov.go.id" className="hover:text-primary">info@bpsdm.jabarprov.go.id</a>
+                <a href="mailto:bpsdm@jabarprov.go.id" className="hover:text-primary">bpsdm@jabarprov.go.id</a>
               </li>
             </ul>
           </div>
           <div>
             <h3 className="font-headline font-semibold text-foreground mb-4">Media Sosial</h3>
             <div className="flex space-x-4">
-              <Link href="#">
+              <Link href="https://www.instagram.com/bpsdmjabar">
                 <Image src="/icons/ic_instagram.png" alt="Instagram" width={24} height={24} />
               </Link>
-              <Link href="#">
+              <Link href="https://www.tiktok.com/@bpsdm_jabar">
                 <Image src="/icons/ic_tiktok.png" alt="TikTok" width={24} height={24} />
               </Link>
-              <Link href="#">
+              <Link href="https://www.youtube.com/@BpsdmJabarOfficial">
                 <Image src="/icons/ic_youtube.png" alt="YouTube" width={24} height={24} />
               </Link>
             </div>
