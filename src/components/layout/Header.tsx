@@ -44,13 +44,14 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-primary text-primary-foreground shadow-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-primary text-primary-foreground shadow-lg">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Logo className="h-8 w-8 text-white" />
-          <span className="font-headline text-lg font-semibold tracking-tight">
-            BPSDM Knowledge Hub
-          </span>
+        <Link href="/" className="flex items-center gap-3">
+          <Logo className="h-10 w-10 text-white" />
+          <div className="font-headline flex flex-col -space-y-1">
+            <span className="text-lg font-bold leading-tight tracking-tight">KMS BPSDM</span>
+            <span className="text-sm font-normal leading-tight">Provinsi Jawa Barat</span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -70,10 +71,11 @@ export function Header() {
             <SheetContent side="right" className="w-[250px] bg-primary text-primary-foreground p-0">
               <div className="flex justify-between items-center p-4 border-b border-primary/20">
                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Logo className="h-6 w-6 text-white" />
-                    <span className="font-headline text-base font-semibold">
-                      BPSDM Hub
-                    </span>
+                    <Logo className="h-8 w-8 text-white" />
+                     <div className="font-headline flex flex-col -space-y-1">
+                      <span className="text-base font-bold leading-tight">KMS BPSDM</span>
+                      <span className="text-xs font-normal leading-tight">Provinsi Jawa Barat</span>
+                    </div>
                   </Link>
                 <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                   <X className="h-6 w-6" />

@@ -34,13 +34,9 @@ export default function Home() {
         )}
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white p-4">
-          <div className="flex items-center justify-center gap-6">
-            <Logo className="h-16 w-16 md:h-20 md:w-20 text-white flex-shrink-0" />
-            <h1 className="font-headline text-left">
-              <span className="block text-4xl md:text-6xl font-bold tracking-tight">KMS BPSDM</span>
-              <span className="block text-2xl md:text-4xl font-normal">Provinsi Jawa Barat</span>
-            </h1>
-          </div>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+            BPSDM Knowledge Hub
+          </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl text-primary-foreground/90">
             Media berbagi pengetahuan dan pembelajaran untuk meningkatkan kompetensi pegawai BPSDM Provinsi Jawa Barat.
           </p>
