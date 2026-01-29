@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BarChart, Book, MessageSquare } from 'lucide-react';
+import { ArrowRight, BarChart, Book, MessageSquare, Users } from 'lucide-react';
 import { getNewestArticles, getPopularArticles, getStats } from '@/lib/mock-data';
 import { ArticleCard } from '@/components/ArticleCard';
 import Link from 'next/link';
@@ -32,7 +32,7 @@ export default function Home() {
             data-ai-hint={heroImage.imageHint}
           />
         )}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 pb-16 flex min-h-[calc(80vh-4rem)] flex-col items-center justify-center text-center p-4">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
             <span className="block">Berbagi Pengetahuan dan</span>
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       <section className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-3">
@@ -87,6 +87,17 @@ export default function Home() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">Materi pembelajaran untuk pengembangan diri.</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center justify-center gap-3">
+                <Users className="h-8 w-8 text-info" />
+                <span className="font-headline">{stats.users} Pengguna Aktif</span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">ASN yang aktif berkontribusi dan belajar.</p>
             </CardContent>
           </Card>
         </div>
