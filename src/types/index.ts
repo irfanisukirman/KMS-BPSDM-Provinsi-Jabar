@@ -2,6 +2,7 @@ export type User = {
   id: string;
   name: string;
   avatarId: string;
+  jobTitle: string;
 };
 
 export type Comment = {
@@ -26,6 +27,8 @@ export type Article = {
   imageId: string;
   isPopular: boolean;
   comments: Comment[];
+  views: number;
+  likes: number;
 };
 
 export type DiscussionPost = {
