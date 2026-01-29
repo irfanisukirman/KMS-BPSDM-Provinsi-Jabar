@@ -1,8 +1,23 @@
-import { Facebook, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import { Logo } from '@/components/icons/Logo';
 
 export function Footer() {
+  const TikTokIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 12.31 10v6.23a2.42 2.42 0 0 1-2.42 2.42c-2.42 0-4.32-2.31-4.32-4.83s1.9-4.83 4.32-4.83a2.42 2.42 0 0 1 2.42 2.42v0A4.28 4.28 0 0 0 17.1 5.82Z" />
+    </svg>
+  );
+
   return (
     <footer className="bg-muted text-muted-foreground">
       <div className="container mx-auto px-4 py-8">
@@ -52,13 +67,13 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-headline font-semibold text-foreground mb-4">Ikuti Kami</h3>
+            <h3 className="font-headline font-semibold text-foreground mb-4">Media Sosial</h3>
             <div className="flex space-x-4">
               <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Twitter className="h-6 w-6" />
+                <Instagram className="h-6 w-6" />
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-primary">
-                <Facebook className="h-6 w-6" />
+                <TikTokIcon className="h-6 w-6" />
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-primary">
                 <Youtube className="h-6 w-6" />
