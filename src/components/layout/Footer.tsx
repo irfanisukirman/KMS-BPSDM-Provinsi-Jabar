@@ -8,11 +8,16 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Logo className="h-8 w-8 text-primary" />
-              <span className="font-headline text-lg font-semibold text-foreground">
-                BPSDM Knowledge Hub
-              </span>
+            <div className="flex items-center gap-3 mb-4">
+              <Logo className="h-10 w-10 text-primary" />
+              <div className="font-headline flex flex-col -space-y-1">
+                <span className="text-xl font-bold leading-tight tracking-tight text-foreground">
+                  KMS BPSDM
+                </span>
+                <span className="text-sm font-normal leading-tight">
+                  Provinsi Jawa Barat
+                </span>
+              </div>
             </div>
             <p className="text-sm">
               Badan Pengembangan Sumber Daya Manusia
