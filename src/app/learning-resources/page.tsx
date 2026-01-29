@@ -34,7 +34,7 @@ export default function LearningResourcesPage() {
             {resources.map((resource) => {
               const Icon = typeConfig[resource.type].icon;
               return (
-              <Card key={resource.id} className="flex flex-col hover:shadow-lg transition-shadow">
+              <Card key={resource.id} className="flex flex-col shadow-lg hover:shadow-xl transition-shadow">
                  <a href={resource.url} target="_blank" rel="noopener noreferrer" className="flex flex-col h-full">
                     <CardHeader>
                     <div className="flex justify-between items-start">
@@ -56,7 +56,7 @@ export default function LearningResourcesPage() {
                 const Icon = typeConfig[resource.type].icon;
                 return (
                  <a key={resource.id} href={resource.url} target="_blank" rel="noopener noreferrer" className="block">
-                    <Card className="hover:bg-muted/50 transition-colors">
+                    <Card className="shadow-lg hover:shadow-xl hover:bg-muted/50 transition-all">
                         <CardContent className="p-4 flex items-center gap-4">
                             <div className={`p-3 rounded-md bg-accent/20 text-accent`}>
                                 <Icon className="h-6 w-6" />
