@@ -6,7 +6,7 @@ import { Logo } from '@/components/icons/Logo';
 export function Footer() {
   return (
     <footer className="bg-muted text-muted-foreground">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-16 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">

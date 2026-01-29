@@ -4,6 +4,7 @@ import type { Article } from '@/types';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { placeholderImages } from '@/lib/placeholder-images';
+import { Badge } from './ui/badge';
 
 type ArticleCardProps = {
   article: Article & { imageUrl?: string; author: { avatarUrl?: string } };
@@ -28,6 +29,9 @@ export function ArticleCard({ article }: ArticleCardProps) {
           )}
         </div>
         <CardHeader className="flex-grow">
+          <Badge className="w-fit border-transparent bg-info/10 text-info font-bold">
+            {article.category}
+          </Badge>
           <CardTitle className="font-headline text-lg leading-snug">{article.title}</CardTitle>
         </CardHeader>
         <CardContent>

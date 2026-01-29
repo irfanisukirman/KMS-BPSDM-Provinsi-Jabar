@@ -54,7 +54,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           <Card>
             <CardHeader>
@@ -103,7 +103,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4">
+      <section className="container mx-auto px-16">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline">Pengetahuan Terbaru</h2>
           <Button variant="outline" asChild>
@@ -117,7 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 pb-12">
+      <section className="container mx-auto px-16 pb-12">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline">Paling Populer</h2>
           <Button variant="outline" asChild>
