@@ -11,27 +11,22 @@ import { getNewestArticles, getPopularArticles, getStats } from '@/lib/mock-data
 import { ArticleCard } from '@/components/ArticleCard';
 import Link from 'next/link';
 import Image from 'next/image';
-import { placeholderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const stats = getStats();
   const newestArticles = getNewestArticles();
   const popularArticles = getPopularArticles();
-  const heroImage = placeholderImages.find(p => p.id === 'hero-background');
 
   return (
     <div className="flex flex-col gap-8 md:gap-12">
       <section className="relative bg-primary w-full text-primary-foreground">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            priority
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
+        <Image
+          src="/images/img_bpsdm.jpg"
+          alt="Gedung BPSDM Jawa Barat"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="absolute inset-0 bg-black/65" />
         <div className="relative z-10 pb-16 flex min-h-[calc(80vh-4rem)] flex-col items-center justify-center text-center p-4">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
