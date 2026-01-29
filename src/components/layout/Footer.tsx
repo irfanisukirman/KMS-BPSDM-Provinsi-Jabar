@@ -67,6 +67,7 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm">
           <p>&copy; {new Date().getFullYear()} BPSDM Provinsi Jawa Barat. Hak cipta dilindungi.</p>
+          <p className="mt-1">Developed by Irfan I. Sukirman, S.Kom.</p>
         </div>
       </div>
     </footer>
