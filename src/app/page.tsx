@@ -11,7 +11,6 @@ import { getNewestArticles, getPopularArticles, getStats } from '@/lib/mock-data
 import { ArticleCard } from '@/components/ArticleCard';
 import Link from 'next/link';
 import { placeholderImages } from '@/lib/placeholder-images';
-import { Logo } from '@/components/icons/Logo';
 
 export default function Home() {
   const stats = getStats();

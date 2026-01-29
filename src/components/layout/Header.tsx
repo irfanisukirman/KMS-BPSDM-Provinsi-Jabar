@@ -48,7 +48,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-3">
           <Logo className="h-10 w-10 text-white" />
-          <div className="font-headline flex flex-col -space-y-1">
+          <div className="font-headline flex flex-col">
             <span className="text-lg font-bold leading-tight tracking-tight">KMS BPSDM</span>
             <span className="text-sm font-normal leading-tight">Provinsi Jawa Barat</span>
           </div>
@@ -72,7 +72,7 @@ export function Header() {
               <div className="flex justify-between items-center p-4 border-b border-primary/20">
                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                     <Logo className="h-8 w-8 text-white" />
-                     <div className="font-headline flex flex-col -space-y-1">
+                     <div className="font-headline flex flex-col">
                       <span className="text-base font-bold leading-tight">KMS BPSDM</span>
                       <span className="text-xs font-normal leading-tight">Provinsi Jawa Barat</span>
                     </div>
