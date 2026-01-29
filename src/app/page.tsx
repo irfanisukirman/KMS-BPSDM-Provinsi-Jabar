@@ -125,6 +125,29 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+       <section className="bg-primary text-primary-foreground -mb-12">
+        <div className="container mx-auto px-4 py-16 md:py-20 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold font-headline">
+            Siap Berbagi Pengetahuan?
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/90">
+            Bergabunglah dengan komunitas pembelajaran BPSDM Jawa Barat dan kontribusikan pengetahuan Anda untuk pengembangan ASN.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <Link href="/knowledge">
+                Jelajahi Pengetahuan
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/90 hover:text-primary">
+              <Link href="/discussion">
+                Mulai Diskusi
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
