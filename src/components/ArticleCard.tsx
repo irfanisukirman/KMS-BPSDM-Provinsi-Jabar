@@ -14,7 +14,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
   const authorImage = placeholderImages.find(p => p.id === article.author.avatarId);
 
   return (
-    <Card className="flex flex-col overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+    <Card className="shadow-lg flex flex-col overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-xl">
       <Link href={`/knowledge/${article.slug}`} className="flex flex-col h-full">
         <div className="relative w-full h-40">
           {article.imageUrl && (

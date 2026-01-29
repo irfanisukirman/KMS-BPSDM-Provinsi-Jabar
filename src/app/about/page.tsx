@@ -36,7 +36,7 @@ export default function AboutPage() {
         <h2 className="font-headline text-3xl font-bold text-center mb-8">Tujuan Utama</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {goals.map((goal, index) => (
-            <Card key={index} className="bg-secondary/50">
+            <Card key={index} className="bg-secondary/50 shadow-lg">
               <CardContent className="p-6 flex items-start gap-4">
                 <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                 <p className="font-medium">{goal}</p>

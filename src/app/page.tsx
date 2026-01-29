@@ -56,7 +56,7 @@ export default function Home() {
 
       <section className="container mx-auto px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-          <Card>
+          <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-3">
                 <Book className="h-8 w-8 text-info" />
@@ -67,7 +67,7 @@ export default function Home() {
               <p className="text-muted-foreground">Pengetahuan dan wawasan terbaru dari para ahli.</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-3">
                 <MessageSquare className="h-8 w-8 text-info" />
@@ -78,7 +78,7 @@ export default function Home() {
               <p className="text-muted-foreground">Ruang diskusi untuk bertukar pikiran dan ide.</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-3">
                 <BarChart className="h-8 w-8 text-info" />
@@ -89,7 +89,7 @@ export default function Home() {
               <p className="text-muted-foreground">Materi pembelajaran untuk pengembangan diri.</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-3">
                 <Users className="h-8 w-8 text-info" />
