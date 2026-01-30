@@ -3,11 +3,17 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, LogIn } from 'lucide-react';
+import { Menu, X, LogIn, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/icons/Logo';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
   { href: '/', label: 'Beranda' },
@@ -16,6 +22,14 @@ const navLinks = [
   { href: '/learning-resources', label: 'Sumber Belajar' },
   { href: '/about', label: 'Tentang KMS' },
 ];
+
+const dropdownLinks = [
+  { href: '/petunjuk-teknik', label: 'Petunjuk Teknik' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/kontak', label: 'Kontak' },
+];
+
+const mobileNavLinks = [...navLinks, ...dropdownLinks];
 
 export function Header() {
   const pathname = usePathname();
@@ -59,6 +73,27 @@ export function Header() {
             {navLinks.map((link) => (
               <NavLink key={link.href} {...link} />
             ))}
+             <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <div className="relative group text-sm font-medium transition-colors hover:text-white py-2 flex items-center gap-1 cursor-pointer text-primary-foreground/90">
+                  Lainnya
+                  <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                   <span
+                    className={cn(
+                      'absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-accent transition-all duration-300 ease-out',
+                      'w-0 group-hover:w-full'
+                    )}
+                  />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {dropdownLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href}>{link.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
           
           <div className="hidden md:block h-6 border-l border-primary-foreground/30"></div>
@@ -91,7 +126,7 @@ export function Header() {
                   </Button>
                 </div>
                 <nav className="flex flex-col gap-4 p-6">
-                  {navLinks.map((link) => (
+                  {mobileNavLinks.map((link) => (
                     <NavLink key={link.href} {...link} />
                   ))}
                 </nav>
