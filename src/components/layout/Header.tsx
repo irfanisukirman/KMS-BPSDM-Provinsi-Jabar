@@ -1,21 +1,36 @@
+
 "use client";
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, LogIn } from 'lucide-react';
+import { Menu, X, LogIn, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/icons/Logo';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
-  { href: '/', label: 'Beranda' },
+  { href: '/dashboard', label: 'Beranda' },
   { href: '/knowledge', label: 'Knowledge' },
   { href: '/discussion', label: 'Diskusi' },
   { href: '/learning-resources', label: 'Sumber Belajar' },
   { href: '/about', label: 'Tentang KMS' },
 ];
+
+const dropdownLinks = [
+  { href: '/petunjuk-teknik', label: 'Petunjuk Teknik' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/kontak', label: 'Kontak' },
+];
+
+const mobileNavLinks = [...navLinks, ...dropdownLinks];
 
 export function Header() {
   const pathname = usePathname();
@@ -46,7 +61,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-primary text-primary-foreground shadow-lg">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/dashboard" className="flex items-center gap-3">
           <Logo className="h-10 w-10 text-white" />
           <div className="font-headline flex flex-col -space-y-1">
             <span className="text-xl font-bold leading-tight tracking-tight">KMS BPSDM</span>
@@ -59,13 +74,36 @@ export function Header() {
             {navLinks.map((link) => (
               <NavLink key={link.href} {...link} />
             ))}
+             <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <div className="relative group text-sm font-medium transition-colors hover:text-white py-2 flex items-center gap-1 cursor-pointer text-primary-foreground/90">
+                  Lainnya
+                  <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                   <span
+                    className={cn(
+                      'absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-accent transition-all duration-300 ease-out',
+                      'w-0 group-hover:w-full'
+                    )}
+                  />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {dropdownLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href}>{link.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
           
           <div className="hidden md:block h-6 border-l border-primary-foreground/30"></div>
 
-          <Button variant="outline" className="hidden md:flex bg-transparent text-white border-white hover:bg-accent hover:text-accent-foreground hover:border-accent">
-            <LogIn className="mr-2 h-4 w-4" />
-            Masuk
+          <Button asChild variant="outline" className="hidden md:flex bg-transparent text-white border-white hover:bg-accent hover:text-accent-foreground hover:border-accent">
+            <Link href="/">
+              <LogIn className="mr-2 h-4 w-4" />
+              Masuk
+            </Link>
           </Button>
 
           <div className="md:hidden">
@@ -78,7 +116,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[250px] bg-primary text-primary-foreground p-0 flex flex-col">
                 <div className="flex justify-between items-center p-4 border-b border-primary/20">
-                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
+                   <Link href="/dashboard" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                       <Logo className="h-8 w-8 text-white" />
                        <div className="font-headline flex flex-col">
                         <span className="text-base font-bold leading-tight">KMS BPSDM</span>
@@ -91,14 +129,16 @@ export function Header() {
                   </Button>
                 </div>
                 <nav className="flex flex-col gap-4 p-6">
-                  {navLinks.map((link) => (
+                  {mobileNavLinks.map((link) => (
                     <NavLink key={link.href} {...link} />
                   ))}
                 </nav>
                 <div className="p-6 mt-auto border-t border-primary/20">
-                    <Button variant="outline" className="w-full text-white border-white hover:bg-accent hover:text-accent-foreground hover:border-accent">
-                        <LogIn className="mr-2 h-4 w-4" />
-                        Masuk
+                    <Button asChild variant="outline" className="w-full text-white border-white hover:bg-accent hover:text-accent-foreground hover:border-accent">
+                        <Link href="/">
+                          <LogIn className="mr-2 h-4 w-4" />
+                          Masuk
+                        </Link>
                     </Button>
                 </div>
               </SheetContent>
