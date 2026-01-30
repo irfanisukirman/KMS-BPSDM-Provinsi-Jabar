@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -49,6 +50,9 @@ export default function ScrollToTopButton() {
       top: 0,
       behavior: 'smooth',
     });
+    if (buttonRef.current) {
+      buttonRef.current.blur();
+    }
   };
 
   const radius = 20;
@@ -57,6 +61,7 @@ export default function ScrollToTopButton() {
 
   return (
     <button
+      ref={buttonRef}
       onClick={scrollToTop}
       className={cn(
         'fixed bottom-8 right-8 z-50 h-14 w-14 rounded-full bg-card p-0 shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
