@@ -13,7 +13,7 @@ import { User, Lock } from 'lucide-react';
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen w-full lg:grid lg:grid-cols-2">
+    <div className="min-h-screen w-full lg:grid lg:grid-cols-[3fr_7fr]">
       <div className="hidden bg-primary text-primary-foreground lg:flex flex-col justify-between p-8">
         <Link href="/dashboard" className="flex items-center gap-3">
           <Logo className="h-10 w-10 text-white" />
