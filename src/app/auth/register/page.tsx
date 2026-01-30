@@ -10,9 +10,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { User, Lock, Mail, Eye, EyeOff } from 'lucide-react';
 import { useState } from 'react';
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const [showAsnPassword, setShowAsnPassword] = useState(false);
+  const [showAsnConfirmPassword, setShowAsnConfirmPassword] = useState(false);
   const [showNonAsnPassword, setShowNonAsnPassword] = useState(false);
+  const [showNonAsnConfirmPassword, setShowNonAsnConfirmPassword] = useState(false);
 
   return (
     <div className="min-h-screen w-full lg:grid lg:grid-cols-[3fr_7fr]">
@@ -58,8 +60,8 @@ export default function LoginPage() {
 
         <Card className="mx-auto w-full max-w-md shadow-2xl">
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold font-headline">Masuk ke Akun Anda</CardTitle>
-            <CardDescription>Pilih tipe akun Anda dan masukkan kredensial.</CardDescription>
+            <CardTitle className="text-2xl font-bold font-headline">Buat Akun Baru</CardTitle>
+            <CardDescription>Pilih tipe akun dan isi formulir pendaftaran.</CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="asn" className="w-full">
@@ -70,6 +72,13 @@ export default function LoginPage() {
               <TabsContent value="asn">
                 <div className="grid gap-4 pt-4">
                   <div className="grid gap-2">
+                    <Label htmlFor="nama-asn">Nama Lengkap</Label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input id="nama-asn" placeholder="Masukkan Nama Lengkap" required className="pl-9"/>
+                    </div>
+                  </div>
+                  <div className="grid gap-2">
                     <Label htmlFor="nip">NIP</Label>
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -78,26 +87,38 @@ export default function LoginPage() {
                   </div>
                   <div className="grid gap-2">
                     <Label htmlFor="password-asn">Kata Sandi</Label>
-                     <div className="relative flex items-center">
+                    <div className="relative flex items-center">
                       <Lock className="absolute left-3 h-4 w-4 text-muted-foreground" />
                       <Input id="password-asn" type={showAsnPassword ? 'text' : 'password'} placeholder="********" required className="pl-9 pr-10"/>
-                      <button
-                        type="button"
-                        onClick={() => setShowAsnPassword(!showAsnPassword)}
-                        className="absolute right-3 text-muted-foreground"
-                        aria-label="Toggle password visibility"
-                      >
+                      <button type="button" onClick={() => setShowAsnPassword(!showAsnPassword)} className="absolute right-3 text-muted-foreground" aria-label="Toggle password visibility">
                         {showAsnPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                       </button>
                     </div>
                   </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="confirm-password-asn">Konfirmasi Kata Sandi</Label>
+                    <div className="relative flex items-center">
+                      <Lock className="absolute left-3 h-4 w-4 text-muted-foreground" />
+                      <Input id="confirm-password-asn" type={showAsnConfirmPassword ? 'text' : 'password'} placeholder="********" required className="pl-9 pr-10"/>
+                      <button type="button" onClick={() => setShowAsnConfirmPassword(!showAsnConfirmPassword)} className="absolute right-3 text-muted-foreground" aria-label="Toggle password confirmation visibility">
+                        {showAsnConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      </button>
+                    </div>
+                  </div>
                   <Button asChild type="submit" className="w-full mt-2 bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="/dashboard">Masuk</Link>
+                    <Link href="/dashboard">Daftar</Link>
                   </Button>
                 </div>
               </TabsContent>
               <TabsContent value="non-asn">
                 <div className="grid gap-4 pt-4">
+                   <div className="grid gap-2">
+                    <Label htmlFor="nama-non-asn">Nama Lengkap</Label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input id="nama-non-asn" placeholder="Masukkan Nama Lengkap" required className="pl-9"/>
+                    </div>
+                  </div>
                   <div className="grid gap-2">
                     <Label htmlFor="email">Email</Label>
                      <div className="relative">
@@ -110,26 +131,31 @@ export default function LoginPage() {
                     <div className="relative flex items-center">
                       <Lock className="absolute left-3 h-4 w-4 text-muted-foreground" />
                       <Input id="password-non-asn" type={showNonAsnPassword ? 'text' : 'password'} placeholder="********" required className="pl-9 pr-10"/>
-                      <button
-                        type="button"
-                        onClick={() => setShowNonAsnPassword(!showNonAsnPassword)}
-                        className="absolute right-3 text-muted-foreground"
-                        aria-label="Toggle password visibility"
-                      >
+                       <button type="button" onClick={() => setShowNonAsnPassword(!showNonAsnPassword)} className="absolute right-3 text-muted-foreground" aria-label="Toggle password visibility">
                         {showNonAsnPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                       </button>
                     </div>
                   </div>
+                   <div className="grid gap-2">
+                    <Label htmlFor="confirm-password-non-asn">Konfirmasi Kata Sandi</Label>
+                    <div className="relative flex items-center">
+                      <Lock className="absolute left-3 h-4 w-4 text-muted-foreground" />
+                      <Input id="confirm-password-non-asn" type={showNonAsnConfirmPassword ? 'text' : 'password'} placeholder="********" required className="pl-9 pr-10"/>
+                       <button type="button" onClick={() => setShowNonAsnConfirmPassword(!showNonAsnConfirmPassword)} className="absolute right-3 text-muted-foreground" aria-label="Toggle password confirmation visibility">
+                        {showNonAsnConfirmPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                      </button>
+                    </div>
+                  </div>
                   <Button asChild type="submit" className="w-full mt-2 bg-accent text-accent-foreground hover:bg-accent/90">
-                     <Link href="/dashboard">Masuk</Link>
+                     <Link href="/dashboard">Daftar</Link>
                   </Button>
                 </div>
               </TabsContent>
             </Tabs>
             <div className="mt-6 text-center text-sm">
-              Belum punya akun?{' '}
-              <Link href="/auth/register" className="underline text-info hover:text-info/90">
-                Daftar
+              Sudah punya akun?{' '}
+              <Link href="/" className="underline text-info hover:text-info/90">
+                Masuk
               </Link>
             </div>
           </CardContent>
