@@ -1,177 +1,109 @@
 
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, BarChart, Book, Flame, MessageSquare, Newspaper, Users, GraduationCap } from 'lucide-react';
-import { getNewestArticles, getPopularArticles, getStats, getTrainingArticles } from '@/lib/mock-data';
-import { ArticleCard } from '@/components/ArticleCard';
-import Link from 'next/link';
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Logo } from '@/components/icons/Logo';
+import { User, Lock } from 'lucide-react';
 
-export default function Home() {
-  const stats = getStats();
-  const newestArticles = getNewestArticles();
-  const popularArticles = getPopularArticles();
-  const trainingArticles = getTrainingArticles();
-
+export default function LoginPage() {
   return (
-    <div className="flex flex-col gap-8 md:gap-12">
-      <section className="relative bg-primary w-full text-primary-foreground">
+    <div className="min-h-screen w-full lg:grid lg:grid-cols-2">
+      <div className="hidden bg-primary text-primary-foreground lg:flex flex-col justify-between p-8">
+        <Link href="/dashboard" className="flex items-center gap-3">
+          <Logo className="h-10 w-10 text-white" />
+          <div className="font-headline flex flex-col -space-y-1">
+            <span className="text-xl font-bold leading-tight tracking-tight">KMS BPSDM</span>
+            <span className="text-sm font-normal leading-tight">Provinsi Jawa Barat</span>
+          </div>
+        </Link>
+        <div className="mb-24">
+          <h1 className="text-4xl font-bold font-headline">Selamat Datang Kembali</h1>
+          <p className="mt-2 text-lg text-primary-foreground/80">Masuk untuk mengakses knowledge base dan forum diskusi.</p>
+        </div>
+        <p className="text-sm text-primary-foreground/60">
+          © {new Date().getFullYear()} KMS BPSDM Provinsi Jawa Barat
+        </p>
+      </div>
+
+      <div className="relative flex items-center justify-center py-12 px-4 h-full">
         <Image
           src="/images/img_bpsdm.jpg"
-          alt="Gedung BPSDM Jawa Barat"
+          alt="Gedung BPSDM"
           fill
-          className="object-cover"
+          className="object-cover -z-10"
           priority
         />
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="relative z-10 pb-16 flex min-h-[calc(80vh-4rem)] flex-col items-center justify-center text-center p-4">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
-            <span className="block">Berbagi Pengetahuan dan</span>
-            <span className="block text-accent">Membangun Kompetensi</span>
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg md:text-xl text-primary-foreground/90">
-            Platform berbagi pengetahuan dan pembelajaran untuk pengembangan kompetensi ASN di lingkungan Pemerintah Provinsi Jawa Barat.
-          </p>
-          <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-[#FCD34D] transition-colors">
-            <Link href="/knowledge">
-              Jelajahi Pengetahuan <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[120px]">
-                <path d="M0,100 Q600,60 1200,100 V120 H0 Z" className="fill-background"></path>
-            </svg>
-        </div>
-      </section>
+        <div className="absolute inset-0 bg-black/60 -z-10" />
 
-      <section className="container mx-auto px-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="flex items-center justify-center gap-3">
-                <Book className="h-8 w-8 text-info" />
-                <span className="font-headline">{stats.articles} Artikel</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Pengetahuan dan wawasan terbaru dari para ahli.</p>
-            </CardContent>
-          </Card>
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="flex items-center justify-center gap-3">
-                <MessageSquare className="h-8 w-8 text-info" />
-                <span className="font-headline">{stats.discussions} Diskusi</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Ruang diskusi untuk bertukar pikiran dan ide.</p>
-            </CardContent>
-          </Card>
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="flex items-center justify-center gap-3">
-                <BarChart className="h-8 w-8 text-info" />
-                <span className="font-headline">{stats.resources} Sumber Belajar</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Materi pembelajaran untuk pengembangan diri.</p>
-            </CardContent>
-          </Card>
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="flex items-center justify-center gap-3">
-                <Users className="h-8 w-8 text-info" />
-                <span className="font-headline">{stats.users} Pengguna Aktif</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">ASN yang aktif berkontribusi dan belajar.</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      <section className="container mx-auto px-16">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
-            <Newspaper className="h-8 w-8 text-primary" />
-            Informasi Terbaru
-          </h2>
-          <Button variant="outline" asChild>
-            <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
-          </Button>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {newestArticles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
-      </section>
-
-      <section className="container mx-auto px-16">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
-            <Flame className="h-8 w-8 text-accent" />
-            Informasi Terpopuler
-          </h2>
-          <Button variant="outline" asChild>
-            <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
-          </Button>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {popularArticles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
-      </section>
-
-      <section className="container mx-auto px-16">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
-            <GraduationCap className="h-8 w-8 text-info" />
-            Informasi Pelatihan
-          </h2>
-          <Button variant="outline" asChild>
-            <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
-          </Button>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {trainingArticles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
-      </section>
-
-       <section className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 py-16 md:py-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">
-            Siap Berbagi Pengetahuan?
-          </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/90">
-            Bergabunglah dengan komunitas pembelajaran BPSDM Jawa Barat dan kontribusikan pengetahuan Anda untuk pengembangan ASN.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-[#FCD34D] transition-colors">
-              <Link href="/knowledge">
-                Jelajahi Pengetahuan
+        <Card className="mx-auto w-full max-w-md shadow-2xl">
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl font-bold font-headline">Masuk ke Akun Anda</CardTitle>
+            <CardDescription>Pilih tipe akun Anda dan masukkan kredensial.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Tabs defaultValue="asn" className="w-full">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="asn">ASN Jabar</TabsTrigger>
+                <TabsTrigger value="non-asn">Non-ASN</TabsTrigger>
+              </TabsList>
+              <TabsContent value="asn">
+                <div className="grid gap-4 pt-4">
+                  <div className="grid gap-2">
+                    <Label htmlFor="nip">NIP</Label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input id="nip" placeholder="Masukkan NIP Anda" required className="pl-9"/>
+                    </div>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="password-asn">Kata Sandi</Label>
+                     <div className="relative">
+                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input id="password-asn" type="password" placeholder="********" required className="pl-9"/>
+                    </div>
+                  </div>
+                  <Button asChild type="submit" className="w-full mt-2 bg-accent text-accent-foreground hover:bg-accent/90">
+                    <Link href="/dashboard">Masuk</Link>
+                  </Button>
+                </div>
+              </TabsContent>
+              <TabsContent value="non-asn">
+                <div className="grid gap-4 pt-4">
+                  <div className="grid gap-2">
+                    <Label htmlFor="email">Email</Label>
+                     <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input id="email" type="email" placeholder="nama@contoh.com" required className="pl-9"/>
+                    </div>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="password-non-asn">Kata Sandi</Label>
+                    <div className="relative">
+                      <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <Input id="password-non-asn" type="password" placeholder="********" required className="pl-9"/>
+                    </div>
+                  </div>
+                  <Button asChild type="submit" className="w-full mt-2 bg-accent text-accent-foreground hover:bg-accent/90">
+                     <Link href="/dashboard">Masuk</Link>
+                  </Button>
+                </div>
+              </TabsContent>
+            </Tabs>
+            <div className="mt-6 text-center text-sm">
+              Belum punya akun?{' '}
+              <Link href="#" className="underline text-primary hover:text-primary/80">
+                Daftar
               </Link>
-            </Button>
-            <Button asChild size="lg" className="bg-white text-accent-foreground hover:bg-transparent hover:text-white hover:border-white border-2 transition-colors">
-              <Link href="/discussion">
-                Mulai Diskusi
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }
