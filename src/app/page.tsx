@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BarChart, Book, Flame, MessageSquare, Newspaper, Users } from 'lucide-react';
+import { ArrowRight, BarChart, Book, Flame, MessageSquare, Newspaper, Users, GraduationCap } from 'lucide-react';
 import { getNewestArticles, getPopularArticles, getStats } from '@/lib/mock-data';
 import { ArticleCard } from '@/components/ArticleCard';
 import Link from 'next/link';
@@ -120,6 +120,23 @@ export default function Home() {
           <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
             <Flame className="h-8 w-8 text-accent" />
             Informasi Terpopuler
+          </h2>
+          <Button variant="outline" asChild>
+            <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
+          </Button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {popularArticles.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </div>
+      </section>
+
+      <section className="container mx-auto px-16">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
+            <GraduationCap className="h-8 w-8 text-info" />
+            Informasi Pelatihan
           </h2>
           <Button variant="outline" asChild>
             <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
