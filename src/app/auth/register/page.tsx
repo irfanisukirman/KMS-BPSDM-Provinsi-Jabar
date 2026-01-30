@@ -66,8 +66,8 @@ export default function RegisterPage() {
           <CardContent>
             <Tabs defaultValue="asn" className="w-full">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="asn" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground [&[data-state=inactive]:hover]:text-foreground [&[data-state=inactive]:hover]:font-bold">ASN Jabar</TabsTrigger>
-                <TabsTrigger value="non-asn" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground [&[data-state=inactive]:hover]:text-foreground [&[data-state=inactive]:hover]:font-bold">Non-ASN</TabsTrigger>
+                <TabsTrigger value="asn" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground [&[data-state=inactive]:hover]:text-foreground">ASN Jabar</TabsTrigger>
+                <TabsTrigger value="non-asn" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground [&[data-state=inactive]:hover]:text-foreground">Non-ASN</TabsTrigger>
               </TabsList>
               <TabsContent value="asn">
                 <div className="grid gap-4 pt-4">
