@@ -27,8 +27,8 @@ export default function LoginPage() {
         </div>
 
         <div className="flex-grow flex flex-col justify-center">
-            <h1 className="text-4xl font-bold font-headline">Selamat Datang Kembali</h1>
-            <p className="mt-2 text-lg text-muted-foreground">Masuk untuk mengakses knowledge base dan forum diskusi.</p>
+            <h1 className="text-4xl font-bold font-headline">Selamat datang di Jabar Corporate University</h1>
+            <p className="mt-2 text-lg text-muted-foreground">Knowledge Management System BPSDM Provinsi Jawa Barat.</p>
         </div>
         
         <div>
