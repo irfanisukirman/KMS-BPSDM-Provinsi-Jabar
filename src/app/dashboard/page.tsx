@@ -164,7 +164,7 @@ export default function Home() {
                 Jelajahi Pengetahuan
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="bg-white text-primary hover:bg-transparent hover:text-white border-2 border-white">
+            <Button asChild size="lg" variant="outline" className="bg-white text-accent-foreground hover:bg-transparent hover:text-white border-2 border-white">
               <Link href="/discussion">
                 Mulai Diskusi
               </Link>
