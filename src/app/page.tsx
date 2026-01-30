@@ -6,8 +6,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BarChart, Book, MessageSquare, Users } from 'lucide-react';
-import { getNewestArticles, getPopularArticles, getStats } from '@/lib/mock-data';
+import { ArrowRight, BarChart, Book, Flame, MessageSquare, Newspaper, Users, GraduationCap } from 'lucide-react';
+import { getNewestArticles, getPopularArticles, getStats, getTrainingArticles } from '@/lib/mock-data';
 import { ArticleCard } from '@/components/ArticleCard';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,6 +16,7 @@ export default function Home() {
   const stats = getStats();
   const newestArticles = getNewestArticles();
   const popularArticles = getPopularArticles();
+  const trainingArticles = getTrainingArticles();
 
   return (
     <div className="flex flex-col gap-8 md:gap-12">
@@ -100,7 +101,10 @@ export default function Home() {
 
       <section className="container mx-auto px-16">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold font-headline">Pengetahuan Terbaru</h2>
+          <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
+            <Newspaper className="h-8 w-8 text-primary" />
+            Informasi Terbaru
+          </h2>
           <Button variant="outline" asChild>
             <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
@@ -114,13 +118,33 @@ export default function Home() {
 
       <section className="container mx-auto px-16">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-bold font-headline">Paling Populer</h2>
+          <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
+            <Flame className="h-8 w-8 text-accent" />
+            Informasi Terpopuler
+          </h2>
           <Button variant="outline" asChild>
             <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {popularArticles.map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </div>
+      </section>
+
+      <section className="container mx-auto px-16">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
+            <GraduationCap className="h-8 w-8 text-info" />
+            Informasi Pelatihan
+          </h2>
+          <Button variant="outline" asChild>
+            <Link href="/knowledge">Lihat Semua <ArrowRight className="ml-2 h-4 w-4" /></Link>
+          </Button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {trainingArticles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
         </div>
@@ -140,7 +164,7 @@ export default function Home() {
                 Jelajahi Pengetahuan
               </Link>
             </Button>
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-transparent hover:text-white hover:border-white border-2 border-transparent transition-colors">
+            <Button asChild size="lg" className="bg-white text-accent-foreground hover:bg-transparent hover:text-white hover:border-white border-2 transition-colors">
               <Link href="/discussion">
                 Mulai Diskusi
               </Link>
