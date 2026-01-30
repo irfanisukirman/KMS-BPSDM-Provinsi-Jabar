@@ -18,7 +18,7 @@ export default function Home() {
   const popularArticles = getPopularArticles();
 
   return (
-    <div className="flex flex-col gap-8 md:gap-12">
+    <div className="flex flex-col">
       <section className="relative bg-primary w-full text-primary-foreground">
         <Image
           src="/images/img_bpsdm.jpg"
@@ -36,7 +36,7 @@ export default function Home() {
           <p className="mt-4 max-w-2xl text-lg md:text-xl text-primary-foreground/90">
             Platform berbagi pengetahuan dan pembelajaran untuk pengembangan kompetensi ASN di lingkungan Pemerintah Provinsi Jawa Barat.
           </p>
-          <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-[#FCD34D] transition-colors">
+          <Button asChild size="lg" className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90 transition-colors">
             <Link href="/knowledge">
               Jelajahi Pengetahuan <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-16">
+      <section className="container mx-auto px-16 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           <Card className="shadow-lg">
             <CardHeader>
@@ -98,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-16">
+      <section className="container mx-auto px-16 pb-12 md:pb-16">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
             <Newspaper className="h-8 w-8 text-primary" />
@@ -115,10 +115,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-16">
+      <section className="container mx-auto px-16 pb-12 md:pb-16">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
-            <Flame className="h-8 w-8 text-primary" />
+            <Flame className="h-8 w-8 text-accent" />
             Informasi Terpopuler
           </h2>
           <Button variant="outline" asChild>
@@ -133,7 +133,7 @@ export default function Home() {
       </section>
 
        <section className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 py-16 md:py-20 text-center">
+        <div className="container mx-auto px-4 py-16 md:py-20 text-center flex flex-col items-center justify-center">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
             Siap Berbagi Pengetahuan?
           </h2>
