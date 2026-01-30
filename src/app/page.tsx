@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BarChart, Book, Flame, MessageSquare, Newspaper, Users, GraduationCap } from 'lucide-react';
-import { getNewestArticles, getPopularArticles, getStats } from '@/lib/mock-data';
+import { getNewestArticles, getPopularArticles, getStats, getTrainingArticles } from '@/lib/mock-data';
 import { ArticleCard } from '@/components/ArticleCard';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,9 +16,10 @@ export default function Home() {
   const stats = getStats();
   const newestArticles = getNewestArticles();
   const popularArticles = getPopularArticles();
+  const trainingArticles = getTrainingArticles();
 
   return (
-    <div className="flex flex-col gap-8 md:gap-12">
+    <div className="flex flex-col">
       <section className="relative bg-primary w-full text-primary-foreground">
         <Image
           src="/images/img_bpsdm.jpg"
@@ -49,7 +50,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-16">
+      <section className="container mx-auto px-16 pt-8 md:pt-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
           <Card className="shadow-lg">
             <CardHeader>
@@ -98,7 +99,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-16">
+      <section className="container mx-auto px-16 pt-8 md:pt-12">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
             <Newspaper className="h-8 w-8 text-primary" />
@@ -115,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-16">
+      <section className="container mx-auto px-16 pt-8 md:pt-12">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
             <Flame className="h-8 w-8 text-accent" />
@@ -132,7 +133,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-16">
+      <section className="container mx-auto px-16 pt-8 md:pt-12">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-bold font-headline flex items-center gap-3">
             <GraduationCap className="h-8 w-8 text-info" />
@@ -143,14 +144,14 @@ export default function Home() {
           </Button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {popularArticles.map((article) => (
+          {trainingArticles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}
         </div>
       </section>
 
-       <section className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 py-16 md:py-20 text-center">
+       <section className="bg-primary text-primary-foreground mt-8 md:mt-12">
+        <div className="container mx-auto px-4 py-16 md:py-20 text-center flex flex-col items-center justify-center">
           <h2 className="text-3xl md:text-4xl font-bold font-headline">
             Siap Berbagi Pengetahuan?
           </h2>
@@ -158,12 +159,12 @@ export default function Home() {
             Bergabunglah dengan komunitas pembelajaran BPSDM Jawa Barat dan kontribusikan pengetahuan Anda untuk pengembangan ASN.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-[#FCD34D] transition-colors">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-[#fab005] transition-colors">
               <Link href="/knowledge">
                 Jelajahi Pengetahuan
               </Link>
             </Button>
-            <Button asChild size="lg" className="bg-white text-primary hover:bg-transparent hover:text-white hover:border-white border-2 border-transparent transition-colors">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-transparent hover:text-white border-2 border-white hover:border-white transition-colors">
               <Link href="/discussion">
                 Mulai Diskusi
               </Link>

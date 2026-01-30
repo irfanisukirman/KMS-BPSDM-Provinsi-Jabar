@@ -91,7 +91,7 @@ const articles: Article[] = [
     content: '<p>Konten detail tentang kepemimpinan adaptif...</p>',
     author: users[2],
     date: '2024-05-15',
-    category: 'Kepemimpinan',
+    category: 'Pelatihan',
     tags: ['Leadership', 'VUCA'],
     imageId: 'article-3',
     isPopular: false,
@@ -123,7 +123,7 @@ const articles: Article[] = [
     content: '<p>Konten detail tentang komunikasi efektif...</p>',
     author: users[0],
     date: '2024-05-10',
-    category: 'Komunikasi',
+    category: 'Pelatihan',
     tags: ['Pelayanan Publik', 'Soft Skills'],
     imageId: 'article-5',
     isPopular: false,
@@ -227,6 +227,10 @@ export function getNewestArticles(limit: number = 4) {
 
 export function getPopularArticles(limit: number = 4) {
     return getArticles().filter(a => a.isPopular).slice(0, limit);
+}
+
+export function getTrainingArticles(limit: number = 4) {
+  return getArticles().filter(a => a.category === 'Pelatihan').slice(0, limit);
 }
 
 export function getDiscussions() {
