@@ -8,27 +8,34 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Logo } from '@/components/icons/Logo';
 import { User, Lock } from 'lucide-react';
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen w-full lg:grid lg:grid-cols-[3fr_7fr]">
-      <div className="hidden bg-primary text-primary-foreground lg:flex flex-col justify-between p-8">
-        <Link href="/dashboard" className="flex items-center gap-3">
-          <Logo className="h-10 w-10 text-white" />
-          <div className="font-headline flex flex-col -space-y-1">
-            <span className="text-xl font-bold leading-tight tracking-tight">KMS BPSDM</span>
-            <span className="text-sm font-normal leading-tight">Provinsi Jawa Barat</span>
-          </div>
-        </Link>
-        <div className="mb-24">
-          <h1 className="text-4xl font-bold font-headline">Selamat Datang Kembali</h1>
-          <p className="mt-2 text-lg text-primary-foreground/80">Masuk untuk mengakses knowledge base dan forum diskusi.</p>
+      <div className="hidden bg-white text-foreground lg:flex flex-col p-8">
+        <div>
+          <Link href="/dashboard">
+            <Image
+              src="/images/img_bpsdm_jabar_master.png"
+              alt="Logo BPSDM Provinsi Jawa Barat"
+              width={240}
+              height={60}
+              priority
+            />
+          </Link>
         </div>
-        <p className="text-sm text-primary-foreground/60">
-          © {new Date().getFullYear()} KMS BPSDM Provinsi Jawa Barat
-        </p>
+
+        <div className="flex-grow flex flex-col justify-center">
+            <h1 className="text-4xl font-bold font-headline">Selamat Datang Kembali</h1>
+            <p className="mt-2 text-lg text-muted-foreground">Masuk untuk mengakses knowledge base dan forum diskusi.</p>
+        </div>
+        
+        <div>
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} KMS BPSDM Provinsi Jawa Barat
+            </p>
+        </div>
       </div>
 
       <div className="relative flex items-center justify-center py-12 px-4 h-full">
