@@ -13,7 +13,12 @@ import { User, Lock } from 'lucide-react';
 export default function LoginPage() {
   return (
     <div className="min-h-screen w-full lg:grid lg:grid-cols-[3fr_7fr]">
-      <div className="hidden bg-cream-texture text-foreground lg:flex flex-col p-8">
+      <div 
+        className="hidden text-foreground lg:flex flex-col p-8 bg-cover bg-center"
+        style={{
+            backgroundImage: "url('/images/img_bg_texture.webp')"
+        }}
+      >
         <div>
           <Link href="/dashboard">
             <Image
