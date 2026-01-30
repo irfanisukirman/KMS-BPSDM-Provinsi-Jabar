@@ -129,7 +129,7 @@ export default function LoginPage() {
             </Tabs>
             <div className="mt-6 text-center text-sm">
               Belum punya akun?{' '}
-              <Link href="/auth/register" className="underline text-primary hover:text-primary/80">
+              <Link href="/auth/register" className="underline text-info hover:text-info/90">
                 Daftar
               </Link>
             </div>

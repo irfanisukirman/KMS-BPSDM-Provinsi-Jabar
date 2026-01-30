@@ -155,7 +155,7 @@ export default function RegisterPage() {
             </Tabs>
             <div className="mt-6 text-center text-sm">
               Sudah punya akun?{' '}
-              <Link href="/" className="underline text-primary hover:text-primary/80">
+              <Link href="/" className="underline text-info hover:text-info/90">
                 Masuk
               </Link>
             </div>

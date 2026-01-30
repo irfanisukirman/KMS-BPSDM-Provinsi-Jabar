@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const isLoginPage = pathname === '/';
+  const isAuthPage = pathname === '/' || pathname === '/auth/register';
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -32,12 +32,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn('font-body antialiased', !isLoginPage && 'min-h-screen bg-background flex flex-col')}>
-        {!isLoginPage && <Header />}
-        <main className={cn(!isLoginPage && 'flex-grow')}>{children}</main>
-        {!isLoginPage && <Footer />}
+      <body className={cn('font-body antialiased', !isAuthPage && 'min-h-screen bg-background flex flex-col')}>
+        {!isAuthPage && <Header />}
+        <main className={cn(!isAuthPage && 'flex-grow')}>{children}</main>
+        {!isAuthPage && <Footer />}
         <Toaster />
-        {!isLoginPage && <ScrollToTopButton />}
+        {!isAuthPage && <ScrollToTopButton />}
       </body>
     </html>
   );
